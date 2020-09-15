@@ -1,4 +1,4 @@
-# verifier-api
+# social-trust-certificates-api
 
 This module is responsible for verifying social trust certificates. 
 
