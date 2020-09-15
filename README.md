@@ -50,3 +50,11 @@ To enable a Twitter profile as a social trust certificate, one has to add the ET
 
 ### Other
 More social trust certificates can be added in a similar matter to increase the trust between two parties without the need of a trusted third party.
+
+## Demonstration
+For demo purposes a WIX website was created (https://simonbachmann5.wixsite.com/mysite). No coding knowledge is required to add the social trust certificate as WIX allows adding meta tags in just a few clicks as shown in the image below.
+
+<p align="center">
+  <img src="./doc/img/wix.png"/>
+</p>
+
