@@ -6,6 +6,7 @@ import ch.idetix.verifierapi.service.TwitterVerifierService;
 import ch.idetix.verifierapi.service.WebsiteVerifierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,7 @@ import javax.validation.constraints.Size;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
+@CrossOrigin(maxAge = 3600)
 @RequestMapping("/api/")
 @RestController
 @Validated
@@ -27,6 +29,7 @@ public class VerifierController {
     @Autowired
     private TwitterVerifierService twitterVerifierService;
 
+    @CrossOrigin(origins = "/**")
     @RequestMapping(value = "/website", method = GET)
     public WebsiteResponse verifyWebsite(
 //            @Pattern(regexp = "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,4}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)", message = "url does not seem to be a valid url")
