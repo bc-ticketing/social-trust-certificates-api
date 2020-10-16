@@ -28,8 +28,6 @@ public class VerifierController {
 
     @RequestMapping(value = "/website", method = GET)
     public WebsiteResponse verifyWebsite(
-//            @Pattern(regexp = "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,4}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)", message = "url does not seem to be a valid url")
-//            @Pattern(regexp = "https?:\\/\\/.*")
             @RequestParam String url) {
         return websiteVerifierService.verifyWebsite(url);
     }

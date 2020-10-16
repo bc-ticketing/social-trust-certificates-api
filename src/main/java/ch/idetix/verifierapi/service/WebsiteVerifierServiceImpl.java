@@ -1,6 +1,7 @@
 package ch.idetix.verifierapi.service;
 
 import ch.idetix.verifierapi.model.WebsiteResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -9,11 +10,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+@Slf4j
 @Service
 public class WebsiteVerifierServiceImpl implements WebsiteVerifierService{
     @Override
     public WebsiteResponse verifyWebsite(String url) {
-
+        log.info("verifying website: {}", url);
         Document doc = null;
         try {
             doc = Jsoup.connect(url).get();
@@ -33,6 +35,9 @@ public class WebsiteVerifierServiceImpl implements WebsiteVerifierService{
                 websiteResponse.setEthAddress(content);
             }
         }
+
+        log.info("found ETH address for twitter profile of {} with {}", url, websiteResponse.getEthAddress());
+
         return websiteResponse;
     }
 }
