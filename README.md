@@ -74,3 +74,13 @@ For demo purposes a WIX website was created (https://simonbachmann5.wixsite.com/
 <p align="center">
   <img src="./doc/img/wix.png"/>
 </p>
+
+## Deploy to Heroku
+
+Make sure you set the environment variable as folls:
+
+```bash
+heroku config:set TWITTER_BEARER_TOKEN="Bearer <YOUR TWITTER TOKEN>"
+```
+
+The port will be set by Heroku with the environment variable `PORT`.
